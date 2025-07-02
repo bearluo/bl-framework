@@ -1,0 +1,47 @@
+{
+    "$schema": "./@types/schema/package/index.json",
+    "package_version": 2,
+    "name": "bl-framework",
+    "version": "1.0.0",
+    "author": "Cocos Creator",
+    "editor": ">=3.8.4",
+    "scripts": {
+        "preinstall": "node ./scripts/preinstall.js",
+        "build": "tsc",
+        "watch": "tsc -w"
+    },
+    "description": "i18n:bl-framework.description",
+    "main": "./dist/main.js",
+    "devDependencies": {
+        "@cocos/creator-types": "^3.8.4",
+        "@types/node": "^18.17.1",
+        "typescript": "^4.3.4"
+    },
+    "contributions": {
+        "builder": "./dist/builder.js",
+        "menu": [
+            {
+                "path": "i18n:bl-framework",
+                "label": "i18n:bl-framework.show_log",
+                "message": "show-log"
+            }
+        ],
+        "messages": {
+            "show-log": {
+                "methods": [
+                    "showLog"
+                ]
+            }
+        },
+        "asset-db": {
+            "mount": {
+                "path": "./assets",
+                "readonly": true
+            }
+        }
+    },
+    "dependencies": {
+        "ccc-axios": "^1.0.1",
+        "crypto-es": "^2.1.0"
+    }
+}

@@ -1,0 +1,133 @@
+# @en Dependencies
+# @zh 依赖包
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# @en Build outputs
+# @zh 构建输出
+dist/
+build/
+lib/
+out/
+
+# @en TypeScript
+# @zh TypeScript 相关文件
+*.tsbuildinfo
+.tscache/
+
+# @en Temporary files
+# @zh 编译器生成的中间文件
+*.o
+*.d
+
+# @en Preprocessor files
+# @zh 预处理器生成的临时文件
+*.ii
+*.id
+*.ix
+*.ip
+*.i
+
+# @en Executable files
+# @zh 可执行程序
+*.out
+*.exe
+
+# @en Log files
+# @zh 编译日志
+*.log
+logs/
+
+# @en Simulator/device log files
+# @zh 模拟器/设备日志
+simulator/
+device/
+
+# @en IDE files
+# @zh IDE 特定的文件
+.vscode/
+.idea/
+*.vcproj
+*.sln
+*.sln.save
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj.filters.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# @en Temporary files
+# @zh 系统临时文件
+*.tmp
+*.bak
+*.swp
+*.old
+*.orig
+*.rej
+.suo
+.DS_Store
+Thumbs.db
+
+# @en Cache files
+# @zh 编译工具缓存
+*.cache
+.cache/
+.parcel-cache/
+
+# @en Environment files
+# @zh 环境配置文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# @en Coverage reports
+# @zh 测试覆盖率报告
+coverage/
+*.lcov
+.nyc_output/
+
+# @en Editor directories and files
+# @zh 编辑器目录和文件
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# @en OS generated files
+# @zh 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# @en Package manager files
+# @zh 包管理器文件
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# @en Cocos Creator specific
+# @zh Cocos Creator 特定文件
+temp/
+library/
+local/
+profiles/
+settings/
+build/
+native/
+.creator/
