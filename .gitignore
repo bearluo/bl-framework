@@ -120,14 +120,3 @@ Thumbs.db
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
-
-# @en Cocos Creator specific
-# @zh Cocos Creator 特定文件
-temp/
-library/
-local/
-profiles/
-settings/
-build/
-native/
-.creator/
