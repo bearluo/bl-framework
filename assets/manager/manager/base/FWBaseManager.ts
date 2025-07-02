@@ -26,7 +26,7 @@ export function registerManager(key: string, ctor: FWBaseManagerCtor) {
  * 注销管理器
  * @param key 要注销的管理器的唯一标识键
  */
-export function unregister(key: string) {
+export function unregisterManager(key: string) {
     managerRegister.delete(key);
 }
 
