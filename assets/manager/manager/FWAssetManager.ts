@@ -39,15 +39,22 @@ export class FWAssetManager extends FWBaseManager {
     }
     
     /** loadRemote缓存 - 存储远程加载的资源 */
-    public loadRemoteCache: Map<string, Asset> = new Map();
+    private loadRemoteCache: Map<string, Asset> = new Map();
     
     /** 子包版本缓存 - 存储各子包的版本信息 */
-    public bundleVersion: Map<string, string> = new Map();
+    private bundleVersion: Map<string, string> = new Map();
 
     /** 已加载的子包缓存 */
-    public bundles:Map<string,FWBundle> = new Map();
+    private bundles:Map<string,FWBundle> = new Map();
 
     start() {
+        /**
+         * 初始化内置子包
+         */
+        let fwBundle = new FWBundle(assetManager.main);
+        this.bundles.set('main',fwBundle);
+        fwBundle = new FWBundle(assetManager.resources);
+        this.bundles.set('resources',fwBundle);
     }
     
     /**
@@ -101,7 +108,7 @@ export class FWAssetManager extends FWBaseManager {
      * @returns FWBundle | undefined 返回已加载的子包对象，未加载则返回undefined
      */
     getBundle(bundleName: string) {
-        return this.bundles.get(bundleName)
+        return this.bundles.get(bundleName);
     }
     
     /**
@@ -120,7 +127,59 @@ export class FWAssetManager extends FWBaseManager {
             }
         })
     }
-    
+
+    /**
+     * 获取已加载的资源
+     * @param path 资源路径
+     * @param type 资源类型
+     * @returns T | null 返回资源对象，未找到则返回null
+     */
+    get<T extends Asset>(path: string, type?: Constructor<T> | null): T | null {
+        let {bundleName,assetPath} = this.__parsePath(path);
+        return this.getBundle(bundleName).get(assetPath,type)
+    }
+
+    /**
+     * 加载资源
+     * @param path 资源路径
+     * @param type 资源类型
+     * @returns Promise<T> 返回加载完成的资源
+     */
+    load<T extends Asset>(path: string, type?: Constructor<T> | null): Promise<T> {
+        let {bundleName,assetPath} = this.__parsePath(path);
+        return func.doPromise<T>((resolve,reject)=>{
+            this.loadBundle({name:bundleName,onComplete:(err,bundle)=>{
+                if(err) {
+                    reject(err)
+                } else {
+                    bundle.load({paths:assetPath,assetType:type,onComplete:(err,data)=>{
+                        if(err) {
+                            reject(err)
+                        } else {
+                            resolve(data as T)
+                        }
+                    }})
+                }
+            }})
+        })
+    }
+    /**
+     * 解析资源路径
+     * @param path 资源路径 bundleName://assetPath
+     * @returns {bundleName: string, assetPath: string} 资源路径
+     */
+    __parsePath(path: string) {
+        // Check if path starts with bundleName://
+        if (path.includes('://')) {
+            // Extract bundle name and asset path
+            const [bundleName, assetPath] = path.split('://');
+            return {bundleName, assetPath};
+        }
+        // 默认走resources
+        const bundleName = 'resources';
+        const assetPath = path;
+        return {bundleName,assetPath}
+    }
 }
 
 /**

@@ -41,7 +41,9 @@
         }
     },
     "dependencies": {
+        "@types/pathfinding": "^0.1.0",
         "ccc-axios": "^1.0.1",
-        "crypto-es": "^2.1.0"
+        "crypto-es": "^2.1.0",
+        "pathfinding": "^0.4.18"
     }
 }
