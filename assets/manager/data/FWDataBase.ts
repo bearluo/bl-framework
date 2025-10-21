@@ -27,7 +27,7 @@ export function registerData(key: string, ctor: FWDataBaseCtor) {
  * 注销数据类
  * @param key 数据类标识符
  */
-export function unregister(key: string) {
+export function unregisterData(key: string) {
     dataRegister.delete(key);
 }
 
