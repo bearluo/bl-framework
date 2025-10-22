@@ -53,7 +53,7 @@ export class FWAudioManager extends FWBaseManager {
      * 监听背景音乐音量变化事件
      */
     start() {
-        app.manager.event.on(app.manager.event.events.onBgmVolumeChanged, this.onBgmVolumeChanged, this);
+        app.manager.event.on(app.manager.event.events.ON_BGM_VOLUME_CHANGED, this.onBgmVolumeChanged, this);
     }
 
     /**

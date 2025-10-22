@@ -355,7 +355,7 @@ export class FWBundle {
         // fw.language.delBundleAutoLanguageConfig(bundleName);
         
         // 发送子包释放事件
-        app.manager.event.emit(app.manager.event.events.onBundleRlease,bundleName);
+        app.manager.event.emit(app.manager.event.events.ON_BUNDLE_RELEASE,bundleName);
         log.info(`unloadBundle end: ${bundleName}`);
     }
 }

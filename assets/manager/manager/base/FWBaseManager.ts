@@ -36,14 +36,13 @@ export function unregisterManager(key: string) {
  * 提供了基本的生命周期方法和事件系统支持
  */
 @ccclass('FWBaseManager')
-export class FWBaseManager extends Eventify(EventTarget) {
+export class FWBaseManager {
 
     /**
      * 构造函数
      * 在创建实例时将自身添加到管理器对象列表中
      */
     public constructor() {
-        super();
         managerObject.push(this);
     }
 

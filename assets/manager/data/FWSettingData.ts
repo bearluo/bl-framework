@@ -32,7 +32,7 @@ export class FWSettingData extends FWDataBase {
     set bgmVolume(value: number) {
         this._bgmVolume = math.clamp01(value);
         this.setFloat(SettingKey.BGM_VOLUME, value);
-        app.manager.event.emit(app.manager.event.events.onBgmVolumeChanged, this._bgmVolume);
+        app.manager.event.emit(app.manager.event.events.ON_BGM_VOLUME_CHANGED, this._bgmVolume);
     }
 
     get bgmVolume(): number {

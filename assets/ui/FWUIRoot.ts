@@ -79,22 +79,22 @@ export class UIStaticNode {
     private _onTouchStart(event?: EventTouch) {
         log.debug("onTouchStart");
         event.preventSwallow = true;
-        app.manager.event.emit(app.manager.event.events.onGameTouchStart,event);
+        app.manager.event.emit(app.manager.event.events.ON_GAME_TOUCH_START, event);
     }
     private _onTouchMove(event?: EventTouch) {
         log.debug("_onTouchMove");
         event.preventSwallow = true;
-        app.manager.event.emit(app.manager.event.events.onGameTouchMove,event);
+        app.manager.event.emit(app.manager.event.events.ON_GAME_TOUCH_MOVE, event);
     }
     private _onTouchEnd(event?: EventTouch) {
         log.debug("_onTouchEnd");
         event.preventSwallow = true;
-        app.manager.event.emit(app.manager.event.events.onGameTouchEnd,event);
+        app.manager.event.emit(app.manager.event.events.ON_GAME_TOUCH_END, event);
     }
     private _onToucCancel(event?: EventTouch) {
         log.debug("_onToucCancel");
         event.preventSwallow = true;
-        app.manager.event.emit(app.manager.event.events.onGameTouchCancel,event);
+        app.manager.event.emit(app.manager.event.events.ON_GAME_TOUCH_CANCEL, event);
     }
 }
 

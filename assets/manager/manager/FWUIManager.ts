@@ -66,7 +66,7 @@ export class FWUIManager extends FWBaseManager {
      */
     changeUIRoot(uiRoot: FWUIRoot): void {
         // 发送UI根节点变更事件
-        app.manager.event.emit(app.manager.event.events.onUIRootChanged, uiRoot);
+        app.manager.event.emit(app.manager.event.events.ON_UI_ROOT_CHANGED, uiRoot);
         
         // 销毁旧的UI根节点
         let oldUIRoot = this.uiRoot;
