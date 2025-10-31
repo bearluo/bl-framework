@@ -1,8 +1,9 @@
 import { Component } from './Component';
-import { ComponentType, ComponentTypeId, EntityId } from '../types';
+import { ComponentType, ComponentTypeId, EntityId, IComponent } from '../types';
 import { ComponentPool } from '../utils/ComponentPool';
 import { getComponentMetadata } from '../decorators/component';
 import { BitSet } from '../utils/BitSet';
+import { log } from '../../common/FWLog';
 
 /**
  * 组件管理器
@@ -16,7 +17,7 @@ export class ComponentManager {
     private nextTypeId: ComponentTypeId = 0;
 
     /** 实体的组件存储 [EntityId -> [ComponentTypeId -> Component]] */
-    private entityComponents: Map<EntityId, Map<ComponentTypeId, Component>> =
+    private entityComponents: Map<EntityId, Map<ComponentTypeId, IComponent>> =
         new Map();
 
     /** 实体的组件位集合 [EntityId -> BitSet] */
@@ -92,6 +93,12 @@ export class ComponentManager {
             this.entityComponentBits.set(entityId, bitSet);
         }
 
+        // 检查组件是否已存在
+        if (components.has(typeId)) {
+            log.warn(`[ECS] Component ${componentType.name} already exists on entity ${entityId}`);
+            return components.get(typeId) as T;
+        }
+
         // 从对象池获取组件实例，如果没有对象池则直接创建
         let component: T;
         const pool = this.componentPools.get(typeId);
@@ -118,7 +125,7 @@ export class ComponentManager {
     /**
      * 获取实体的组件
      */
-    getComponent<T extends Component>(
+    getComponent<T extends IComponent>(
         entityId: EntityId,
         componentType: ComponentType<T>
     ): T | undefined {

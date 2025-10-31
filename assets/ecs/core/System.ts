@@ -6,7 +6,7 @@ import { World } from './World';
  * 系统包含处理实体和组件的逻辑
  */
 export abstract class System implements ISystem {
-    /** 系统优先级 */
+    /** 系统优先级 优先级数字越小越先执行，默认0*/
     priority: SystemPriority = 0;
 
     /** 所属World */

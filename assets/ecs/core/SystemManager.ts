@@ -36,7 +36,7 @@ export class SystemManager {
         this.systems.push(system);
         this.systemTypes.set(systemType, system);
 
-        // 按优先级排序
+        // 按优先级从小到大排序，优先级数字越小越先执行
         this.systems.sort((a, b) => a.priority - b.priority);
 
         // 初始化系统

@@ -9,7 +9,7 @@
 export interface SystemDecoratorConfig {
     /** 系统名称 */
     name?: string;
-    /** 系统优先级 */
+    /** 系统优先级 优先级数字越小越先执行，默认0*/
     priority?: number;
 }
 
