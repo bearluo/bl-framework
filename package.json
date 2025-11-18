@@ -13,7 +13,7 @@
     "description": "i18n:bl-framework.description",
     "main": "./dist/main.js",
     "devDependencies": {
-        "@cocos/creator-types": "^3.8.4",
+        "@cocos/creator-types": "^3.8.7",
         "@types/node": "^18.17.1",
         "typescript": "^4.3.4"
     },
