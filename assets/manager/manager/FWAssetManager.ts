@@ -2,7 +2,7 @@ import { __private, _decorator, Asset, assetManager, AssetManager, Component, Co
 import { FWBaseManager } from './base/FWBaseManager';
 import { func } from '../../common/FWFunction';
 import { EDITOR, NATIVE } from 'cc/env';
-import { log } from '../../common/FWLog';
+import { log } from '../../common';
 const { ccclass, property } = _decorator;
 
 /**

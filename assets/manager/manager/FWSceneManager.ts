@@ -2,7 +2,7 @@ import { __private, _decorator, assert, Asset, assetManager, AssetManager, Compo
 import { FWBaseManager } from './base/FWBaseManager';
 import { func, qAsset, uiFunc } from '../../common/FWFunction';
 import { NATIVE } from 'cc/env';
-import { log } from '../../common/FWLog';
+import { log } from '../../common';
 import { FWBundle } from './FWAssetManager';
 import { constant } from '../../common/FWConstant';
 import { FWUILoading } from '../../ui';

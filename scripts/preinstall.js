@@ -12,9 +12,13 @@ const PATH = {
 
 function checkCreatorTypesVersion(version) {
     const cmd = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-    let versionList = spawnSync(cmd, ['view', '@cocos/creator-types', 'versions']).stdout.toString();
+    const result = spawnSync(cmd, ['view', '@cocos/creator-types', 'versions']);
+    if (!result.stdout) {
+        return false;
+    }
+    let versionList = result.stdout.toString();
     try {
-        versionList = JSON.parse(listString);
+        versionList = JSON.parse(versionList);
     } catch (error) {
         // 只存在单个版本号时，在 mac 上输出字符串数组，win 上为字符串，需要容错
     }

@@ -1,4 +1,4 @@
-import { log } from "../common/FWLog";
+import { log } from "../common";
 import { ISocket, INetworkTips, IProtocolHelper, RequestObject, CallbackObject, NetData, NetCallFunc } from "./NetInterface";
 
 /*

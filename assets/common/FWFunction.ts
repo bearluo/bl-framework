@@ -2,7 +2,7 @@ import { _decorator, assert, Asset, AudioClip, AudioSource, Button, Component, C
 import { Vec2, v2, Vec3, v3, Vec4, v4 } from 'cc';
 import { constant } from './FWConstant';
 import { FWUIDialog, FWUILoading } from '../ui';
-import { Log } from './FWLog';
+import { Log } from './index';
 import { FWTimer } from './FWTimer';
 
 /**

@@ -1,5 +1,5 @@
 import { _decorator, error, game, native, EventTarget } from 'cc';
-import { log } from '../common/FWLog';
+import { log } from '../common';
 import CryptoES from 'crypto-es';
 import { FWFile } from '../common/FWFile';
 import { func } from '../common/FWFunction';

@@ -1,6 +1,6 @@
 import { _decorator, sys } from 'cc';
 import { FWDataBase } from './FWDataBase';
-import { log } from '../../common/FWLog';
+import { log } from '../../common';
 import CryptoES from 'crypto-es';
 
 /**

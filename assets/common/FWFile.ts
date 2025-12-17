@@ -2,7 +2,7 @@ import { _decorator, Component, native, Node, sys } from 'cc';
 const { ccclass, property } = _decorator;
 
 import CryptoES from 'crypto-es';
-import { log } from './FWLog';
+import { log } from './index';
 import { constant } from './FWConstant';
 
 /**

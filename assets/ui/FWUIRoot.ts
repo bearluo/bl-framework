@@ -1,6 +1,6 @@
 import { _decorator, Component, EventTouch, Node } from 'cc';
 import { func, uiFunc } from '../common/FWFunction';
-import { log } from '../common/FWLog';
+import { log } from '../common';
 const { ccclass, property } = _decorator;
 
 @ccclass('FWUIRoot')

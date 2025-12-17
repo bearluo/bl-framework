@@ -1,3 +1,4 @@
+import { EventMap } from '@bl-framework/core';
 import { Node, EventTouch, Component } from 'cc';
 
 
@@ -52,7 +53,7 @@ export const FWEventNames = {
  * // dispatcher.emit('ON_BGM_VOLUME_CHANGED', '0.8'); // ✗ 类型错误
  * ```
  */
-export interface IFWEvents extends Record<string, any[]> {
+export interface IFWEvents extends EventMap {
     // ==================== UI相关事件 ====================
     
     /**

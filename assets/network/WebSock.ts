@@ -1,4 +1,4 @@
-import { log } from "../common/FWLog";
+import { log } from "../common";
 import { ISocket, NetData } from "./NetInterface";
 
 export class WebSock implements ISocket {

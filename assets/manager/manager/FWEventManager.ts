@@ -1,7 +1,7 @@
 import { _decorator, assert, AudioClip, AudioSource, BlockInputEvents, color, Component, director, Eventify, EventTouch, log, Node, Pool, RenderRoot2D, Sprite, SpriteFrame, UITransform, Widget } from 'cc';
 import { FWBaseManager } from "./base/FWBaseManager";
-import { FWEventDispatcher } from '../../events/FWEventDispatcher';
-import { FWEventName, FWEventNames, IFWEvents } from '../../events/FWEvents';
+import { FWEventDispatcher } from '../../events';
+import { IFWEvents, FWEventName, FWEventNames } from '../../events/FWEvents';
 const { ccclass, property } = _decorator;
 
 @ccclass('FWEventManager')
